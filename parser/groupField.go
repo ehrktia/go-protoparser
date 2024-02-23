@@ -161,10 +161,7 @@ func (p *Parser) peekIsGroup() bool {
 
 	p.lex.Next()
 	defer p.lex.UnNextTo(p.lex.RawText)
-	if p.lex.Token != scanner.TLEFTCURLY {
-		return false
-	}
-	return true
+	return (p.lex.Token != scanner.TLEFTCURLY)
 }
 
 // isCapitalized returns true if is not empty and the first letter is
